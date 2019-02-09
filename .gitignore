@@ -4,6 +4,12 @@
 # Visual Studio 2015 database file
 *.VC.db
 
+# CLion specific files
+.idea
+/cmake-build-debug
+/cmake-build-release
+CMakeLists.txt
+
 # Compiled Object files
 *.slo
 *.lo
