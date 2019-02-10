@@ -1,6 +1,11 @@
 # Visual Studio 2015 user specific files
 .vs/
 
+# Starter Content
+Content/StarterContent/*
+!Content/StarterContent/Textures/*
+!Content/StarterContent/Materials/*
+
 # Visual Studio 2015 database file
 *.VC.db
 
