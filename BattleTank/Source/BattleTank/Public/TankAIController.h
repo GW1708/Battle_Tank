@@ -19,7 +19,8 @@ public:
 	ATank* getControlledTank() const;
 	ATank* getPlayerTank() const;
 
-	void BeginPlay() override;
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 
 };

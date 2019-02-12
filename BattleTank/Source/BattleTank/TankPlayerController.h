@@ -18,6 +18,11 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 public:
     ATank* getControlledTank() const;
 
-	void BeginPlay() override;
-	
+	virtual void BeginPlay() override;
+    virtual void Tick(float DeltaTime) override;
+
+private:
+    // Moves to Barrel so, that a shot would hit where the barrel intersects the world
+    void aimTowardsCrosshair();
+    bool getSightRayHitLocation(FVector& outhit_location) const;
 };
