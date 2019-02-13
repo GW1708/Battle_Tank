@@ -23,6 +23,18 @@ void ATankAIController::BeginPlay()
 void ATankAIController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
+    aimTowardsPlayer();
+}
+
+void ATankAIController::aimTowardsPlayer()
+{
+    auto player_tank = getPlayerTank();
+    if (player_tank)
+    {
+        getControlledTank()->aimAt(player_tank->GetActorLocation());
+    } else {
+        return;
+    }
 }
 
 ATank* ATankAIController::getControlledTank() const
