@@ -26,6 +26,9 @@ void UTankAimingComponent::aimAt(FVector hit_location, float launch_speed)
 	    start_location,
 	    hit_location,
 	    launch_speed,
+	    false,
+	    0,
+	    0,
 	    ESuggestProjVelocityTraceOption::DoNotTrace
     );
 
@@ -43,6 +46,6 @@ void UTankAimingComponent::moveBarrelTowards(FVector aim_direction)
     auto aim_as_rotator = aim_direction.Rotation();
     auto delta_rotator = aim_as_rotator - barrel_rotator;
 
-    barrel_->elevate(5.f);
+    barrel_->elevate(delta_rotator.Pitch);
 
 }
